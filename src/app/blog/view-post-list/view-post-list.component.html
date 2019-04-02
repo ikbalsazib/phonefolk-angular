@@ -1,0 +1,45 @@
+
+<app-demo-visit-header></app-demo-visit-header>
+
+<div class="container-fluid">
+  <div class="row mt-4">
+    <!--Main Post Column-->
+    <div class="col-md-9 main-blog-col">
+      <mat-spinner class="m-auto" *ngIf="isLoading"></mat-spinner>
+      <div class="row" *ngIf="posts.length > 0">
+        <!--The Post Loop Start..-->
+        <div class="col-md-4" *ngFor="let post of posts">
+          <a [routerLink]="['/our-blog', post.slugName]">
+            <div class="my-card">
+              <img [src]="post.imageUrl" [alt]="post.title">
+              <div class="containers">
+                <h4><b>{{post.title}}</b></h4>
+                <small class="mr-2">Created at: {{post.createdAt | date: 'fullDate'}}</small>
+                <small class="text-danger">Created by: {{post.creator.name}}</small>
+                <div class="list-content" [innerHTML]="post.content | textShorten:300"></div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="mt-2">
+        <mat-paginator *ngIf="posts.length > 0" [length]="totalPosts" [pageSize]="postsPerPage" [pageSizeOptions]="pageSizeOption" (page)="onChangedPage($event)"></mat-paginator>
+      </div>
+
+    </div>
+
+    <!--Sidebar-->
+    <div class="col-md-3">
+      <div class="card border-info mb-3">
+        <div class="card-header text-center text-info"><h3>PhoneFolk SideBar</h3></div>
+        <div class="card-body text-info">
+          <h5 class="card-title">SideBar is Coming Soon!</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, quod.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

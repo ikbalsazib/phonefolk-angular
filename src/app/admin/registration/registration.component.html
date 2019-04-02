@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <!--Template-Driven Form-->
+  <div class="row mt-3">
+    <div class="col-6 m-auto">
+      <mat-spinner class="m-auto" *ngIf="isLoading"></mat-spinner>
+
+      <form (ngSubmit)="onSubmitRegister(formElement)" #formElement="ngForm" *ngIf="!isLoading">
+        <div class="form-group">
+          <label for="userName">Full Name</label>
+          <input ngModel name="name" required #nameInput="ngModel" type="text" class="form-control" id="userName" aria-describedby="titleHelp" placeholder="Enter full Name..">
+          <small *ngIf="nameInput.invalid && nameInput.touched" class="form-text text-danger">This field can not be empty!</small>
+        </div>
+
+        <div class="form-group">
+          <label for="userEmail">Email Address</label>
+          <input ngModel name="email" required email #emailInput="ngModel" type="email" class="form-control" id="userEmail" aria-describedby="titleHelp" placeholder="Enter Your Email Address..">
+          <small *ngIf="emailInput.invalid && emailInput.touched" class="form-text text-danger">Please Enter a valid email address!</small>
+        </div>
+
+        <div class="form-group">
+          <label for="userPassword">Enter Password</label>
+          <input ngModel name="password" required #passInput="ngModel" type="password" class="form-control" id="userPassword" placeholder="Enter Your Password">
+          <small *ngIf="passInput.invalid && passInput.touched" class="form-text text-danger">Please Enter a valid password!</small>
+        </div>
+
+        <button [disabled]="!formElement.valid" type="submit" class="btn btn-success">Sign Up</button>
+      </form>
+
+    </div>
+  </div>
+
+</div>

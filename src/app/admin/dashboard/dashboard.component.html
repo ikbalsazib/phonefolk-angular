@@ -1,0 +1,177 @@
+
+<!-- Main DashBoard Home -->
+
+      <!--Dashboard Head Cards-->
+      <div class="row">
+        <div class="col-md-6 col-lg-3">
+          <div class="card-static card-green">
+            <h2 class="card-static-head">Blog Posts</h2>
+            <span class="desc">{{totalPosts}} Posts Available</span>
+            <div class="icon">
+              <fa-icon [icon]="faBlog"></fa-icon>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card-static card-orange">
+            <h2 class="card-static-head">SmartPhones</h2>
+            <span class="desc">580 Phones Available</span>
+            <div class="icon">
+              <fa-icon [icon]="faMobileAlt"></fa-icon>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card-static card-blue">
+            <h2 class="card-static-head">Users</h2>
+            <span class="desc">2 Users Available</span>
+            <div class="icon">
+              <fa-icon [icon]="faUsers"></fa-icon>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card-static card-red">
+            <h2 class="card-static-head">Comments</h2>
+            <span class="desc">Total 1280 Comments</span>
+            <div class="icon">
+              <fa-icon [icon]="faComments"></fa-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END STATISTIC-->
+
+      <!-- Table and Cards -->
+      <div class="row">
+        <div class="col-lg-9">
+          <h2 class="title-1 m-b-25">Recently Added Blog Posts</h2>
+          <div class="table-responsive-lg table-card">
+            <table class="table table-striped customize-table">
+              <thead class="thead-dark text-center">
+              <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Categories</th>
+                <th>Created Date</th>
+              </tr>
+              </thead>
+              <tbody class="text-center">
+              <tr *ngFor="let blogPost of blogPosts; let i = index">
+                <td>{{i + 1}}</td>
+                <td>{{blogPost.title}}</td>
+                <td>{{blogPost.creator.name}}</td>
+                <td>uncategories</td>
+                <td>{{blogPost.createdAt}}</td>
+              </tr>
+              <!--<tr>-->
+                <!--<td>2018-09-28 01:22</td>-->
+                <!--<td>100397</td>-->
+                <!--<td>Samsung S8 Black</td>-->
+                <!--<td>$756.00</td>-->
+                <!--<td>1</td>-->
+                <!--<td>$756.00</td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td>2018-09-27 02:12</td>-->
+                <!--<td>100396</td>-->
+                <!--<td>Game Console Controller</td>-->
+                <!--<td>$22.00</td>-->
+                <!--<td>2</td>-->
+                <!--<td>$44.00</td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td>2018-09-26 23:06</td>-->
+                <!--<td>100395</td>-->
+                <!--<td>iPhone X 256Gblack</td>-->
+                <!--<td>$1199.00</td>-->
+                <!--<td>1</td>-->
+                <!--<td>$1199.00</td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td>2018-09-25 19:03</td>-->
+                <!--<td>100393</td>-->
+                <!--<td>USB 3.0 Cable</td>-->
+                <!--<td>$10.00</td>-->
+                <!--<td>3</td>-->
+                <!--<td>$30.00</td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td>2018-09-29 05:57</td>-->
+                <!--<td>100392</td>-->
+                <!--<td>Smartwatch 4.0 LTE Wifi</td>-->
+                <!--<td>$199.00</td>-->
+                <!--<td>6</td>-->
+                <!--<td>$1494.00</td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td>2018-09-24 19:10</td>-->
+                <!--<td>100391</td>-->
+                <!--<td>Camera C430W 4k</td>-->
+                <!--<td>$699.00</td>-->
+                <!--<td>1</td>-->
+                <!--<td>$699.00</td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td>2018-09-22 00:43</td>-->
+                <!--<td>100393</td>-->
+                <!--<td>USB 3.0 Cable</td>-->
+                <!--<td>$10.00</td>-->
+                <!--<td>3</td>-->
+                <!--<td>$30.00</td>-->
+              <!--</tr>-->
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <h2 class="title-1 m-b-25">Top countries</h2>
+          <div class="table-side-card">
+            <div class="au-card-inner">
+              <div class="table-responsive">
+                <table class="table card-table">
+                  <tbody class="text-center">
+                  <tr>
+                    <td>United States</td>
+                    <td>$119,366.96</td>
+                  </tr>
+                  <tr>
+                    <td>Australia</td>
+                    <td>$70,261.65</td>
+                  </tr>
+                  <tr>
+                    <td>United Kingdom</td>
+                    <td>$46,399.22</td>
+                  </tr>
+                  <tr>
+                    <td>Turkey</td>
+                    <td>$35,364.90</td>
+                  </tr>
+                  <tr>
+                    <td>Germany</td>
+                    <td>$20,366.96</td>
+                  </tr>
+                  <tr>
+                    <td>France</td>
+                    <td>$1066.96</td>
+                  </tr>
+                  <tr>
+                    <td>Australia</td>
+                    <td>$5,366.96</td>
+                  </tr>
+                  <tr>
+                    <td>Italy</td>
+                    <td>$1639.32</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Table & Cards End -->
+
+
+

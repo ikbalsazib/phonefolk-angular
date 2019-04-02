@@ -1,0 +1,21 @@
+.container-fluid {
+  width: 85%;
+}
+
+@media (max-width:750px) {
+  .container-fluid {
+    width: 100%;
+  }
+
+}
+
+
+.default-uploader {
+  //visibility: hidden;
+}
+
+.image-view {
+  width: 25rem;
+  height: auto;
+  margin-bottom: 10px;
+}

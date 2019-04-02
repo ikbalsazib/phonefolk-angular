@@ -1,0 +1,103 @@
+
+<!-- Main DashBoard Home -->
+<div class="dashboard-wrapper">
+  <nav class="sidebar-nav" [ngClass]="{'active': sidebarCollapse === true}">
+    <div class="sidebar-header">
+      <a href="#"><img class="img-fluid" src="assets/img/phonefolk_logo_main.png" alt="Phonefolk logo" /></a>
+    </div>
+
+    <ul class="list-unstyled components">
+
+      <button (click)="adminVisit()" class="btn btn-outline-info">Visit PhoneFolk</button>
+
+      <li>
+        <a routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" routerLink="/pf-admin/all-blog-post-lists"><fa-icon [icon]="faBlog"></fa-icon>All Blog Posts</a>
+      </li>
+
+      <li>
+        <a href="#"><fa-icon [icon]="faChartBar"></fa-icon>Charts</a>
+      </li>
+      <li>
+        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><fa-icon [icon]="faFileAlt"></fa-icon> Page</a>
+        <ul class="collapse list-unstyled" id="pageSubmenu">
+          <li>
+            <a href="#">page1</a>
+          </li>
+          <li>
+            <a href="#">page2</a>
+          </li>
+          <li>
+            <a href="#">page3</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#"><fa-icon [icon]="faComments"></fa-icon>Comments</a>
+      </li>
+      <li>
+        <a href="#"><fa-icon [icon]="faEnvelope"></fa-icon>Contact Us</a>
+      </li>
+      <li>
+        <a href="#"><fa-icon [icon]="faCog"></fa-icon>Settings</a>
+      </li>
+      <li>
+        <a href="#"><fa-icon [icon]="faAngry"></fa-icon>Version Update</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="main-nav-and-content">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-4">
+      <button (click)="onNavSideBtnClick()" type="button" class="btn btn-info">
+        <fa-icon [rotate]="collapseIconRotate" [icon]="faArrowCircleLeft"></fa-icon>
+      </button>
+
+      <div class="mobile-brand tex-center">
+        <img class="img-fluid" src="assets/img/mobile_small_logo.png" alt="">
+      </div>
+
+      <button (click)="onClickMenu()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="header-navbar collapse navbar-collapse" [ngClass]="{'show' : mobileMenuClick === true}" id="navbarSupportedContent">
+        <ul class="navbar-nav m-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="activated" routerLink="/pf-admin/dashboard">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="activated" routerLink="/pf-admin/create-blog-post">Create Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="activated" routerLink="/pf-admin/register-new-user">Add User</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="activated" href="#">UI Elements</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="activated" (click)="onClickLogOut()">LogOut</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    <!-- Main Content -->
+    <div class="container-fluid mt-4">
+      <router-outlet></router-outlet>
+
+    </div>
+
+
+  </div>
+
+
+
+
+
+</div>
+
+

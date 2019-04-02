@@ -1,0 +1,145 @@
+
+//@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+p{font-family: 'Poppins', sans-serif;
+  font-size: 1.1em;
+  font-weight: 300;
+  line-height: 1.7em;
+  color: #999;
+}
+
+/* Main Dashboard */
+.dashboard-wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+/* SideBar Nav.. */
+.sidebar-nav a{
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.sidebar-nav {
+  min-width: 300px;
+  max-width: 300px;
+  background: #FFFFFF;
+  color: #302f2f;
+  transition: all 0.3s;
+
+  .sidebar-header{
+    background: #F5F5F5;
+    padding: 10px;
+
+    .img-fluid {
+      height: 75px;
+    }
+  }
+
+  fa-icon {
+    margin-right: 12px;
+  }
+
+  .components{
+    padding: 35px;
+    border-bottom: 1px solid #cccccc;
+
+    p{
+      padding: 10px;
+      font-size: 1.1em;
+      display: block;
+    }
+
+    li .active-link {
+      color: #7386D5;
+    }
+
+    li a{
+      display: block;
+      color: #555;
+      font-size: 16px;
+      padding: 15px 0;
+      font-family: 'Poppins', sans-serif;
+
+      &:hover {
+        color: #7386D5;
+        background: #fff;
+      }
+    }
+  }
+}
+
+.active{
+  margin-left: -300px;
+}
+
+
+@media(max-width:768px){
+  .sidebar-nav{margin-left: -300px;}
+  .sidebar-nav.active{
+    margin-left: 0;
+  }
+  .sidebar-navCollapse span{
+    display: none;
+  }
+
+}
+
+/* Main Nav & Content Area */
+.container-fluid {
+  width: 90%;
+}
+
+@media (max-width: 792px) {
+  .container-fluid {
+    width: 100%;
+  }
+}
+
+.header-navbar .navbar-nav .nav-item:last-child .nav-link {
+  border-right: 1px solid rgba(15, 148, 201, 0.102);
+}
+
+.header-navbar .navbar-nav .nav-item .nav-link {
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  color: rgb(107, 104, 104);
+  padding: 10px 30px;
+  border-left: 1px solid rgba(15, 148, 201, 0.102);
+  border-bottom: 3px solid transparent;
+}
+
+.header-navbar .navbar-nav .nav-item .nav-link:hover {
+  color: #f04c0b ;
+  border-bottom: 3px solid red;
+  transition: .5s;
+}
+
+.header-navbar .navbar-nav .nav-item .activated {
+  color: #f04c0b ;
+  border-bottom: 3px solid red;
+  transition: .5s;
+}
+
+.main-nav-and-content {
+  width: 100%;
+  min-height: 100vh;
+  transition: all 0.3s;
+  background-color: #E5E5E5;
+}
+
+.mobile-brand {
+
+  .img-fluid {
+    height: 60px;
+    width: 100%;
+    display: none;
+  }
+}
+
+@media (max-width: 792px) {
+  .mobile-brand .img-fluid {
+    display: inline;
+  }
+}

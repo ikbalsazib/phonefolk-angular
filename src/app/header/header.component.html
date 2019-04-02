@@ -1,0 +1,26 @@
+<header *ngIf="!isUserAuthenticate" class="main-header">
+  <nav class="my-navbar">
+    <!--<input type="checkbox" [checked]="isClick" id="nav" class="">-->
+    <label (click)="onNavBtnClick()" class="nav-btn" [ngClass]="{'nav-animation' : mobileMenuClick === true}">
+      <i></i>
+      <i></i>
+      <i></i>
+    </label>
+    <div class="logo">
+      <a routerLink="/"><img src="assets/img/phonefolk_logo_main.png" alt="PhoneFolk Logo Official"></a>
+    </div>
+    <div [hidden]="isNavClick" [ngClass]="{'mobile-nav' : isMobileScreen === true}" >
+      <ul>
+        <li routerLinkActive="active"><a (click)="onNavBtnClick()"  routerLink="/">Home</a></li>
+        <li routerLinkActive="active"><a (click)="onNavBtnClick()"  routerLink="/our-blog">Our Blog</a></li>
+        <li routerLinkActive="active"><a (click)="onNavBtnClick()" routerLink="/our-blog">How To</a></li>
+        <li routerLinkActive="active"><a (click)="onNavBtnClick()" >Phone Review</a></li>
+        <li routerLinkActive="active"><a (click)="onNavBtnClick()" >Phone Brands</a></li>
+        <li *ngIf="!isUserAuthenticate" routerLinkActive="active"><a (click)="onNavBtnClick()" routerLink="/pf-admin/login">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+

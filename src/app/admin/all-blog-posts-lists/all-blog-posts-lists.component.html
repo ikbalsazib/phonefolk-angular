@@ -1,0 +1,39 @@
+<!-- Table and Cards -->
+<div class="row">
+  <div class="col-lg-12">
+    <h2 class="text-center text-secondary py-3">{{pageTitle}}</h2>
+    <div class="table-responsive-lg table-card">
+      <table class="table table-striped customize-table">
+        <thead class="thead-dark text-center">
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Categories</th>
+          <th>Created Date</th>
+          <th>Edit Post</th>
+          <th>Delete Post</th>
+        </tr>
+        </thead>
+        <tbody class="text-center">
+
+        <tr *ngFor="let blogPost of blogPosts; let i = index">
+          <td>{{i + 1}}</td>
+          <td>{{blogPost.title}}</td>
+          <td>{{blogPost.creator.name}}</td>
+          <td>uncategorized</td>
+          <td>{{blogPost.createdAt}}</td>
+          <td><a [routerLink]="['/pf-admin/edit-blog-post/', blogPost.id]" class="btn btn-warning">Edit</a></td>
+          <td><a (click)="deletePostById(blogPost.id)" class="btn btn-danger text-light">Delete</a></td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+    <div class="mt-2">
+      <mat-paginator *ngIf="blogPosts.length > 0" [length]="totalPosts" [pageSize]="postsPerPage" [pageSizeOptions]="pageSizeOption" (page)="onChangedPage($event)"></mat-paginator>
+    </div>
+  </div>
+
+</div>
+<!-- Table & Cards End -->

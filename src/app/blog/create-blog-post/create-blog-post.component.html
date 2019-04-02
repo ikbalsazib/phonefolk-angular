@@ -1,0 +1,102 @@
+
+  <div class="row mt-3">
+    <div class="col-7 m-auto">
+      <mat-spinner class="m-auto" *ngIf="isLoading"></mat-spinner>
+
+      <form [formGroup]="reactiveForm" (submit)="onSubmitPost()" *ngIf="!isLoading">
+        <div class="form-group">
+          <label for="postTitle">Enter Post Title:</label>
+          <input formControlName="title" type="text" class="form-control" id="postTitle" aria-describedby="titleHelp" placeholder="Enter post title..">
+          <small *ngIf="reactiveForm.get('title').invalid && reactiveForm.get('title').touched" id="titleHelp" class="form-text text-danger">This field can not be empty!</small>
+        </div>
+
+        <!--<div class="form-group">-->
+        <!--<label for="postContent">Enter Post Content:</label>-->
+        <!--<textarea formControlName="content" class="form-control" id="postContent" rows="6"></textarea>-->
+        <!--</div>-->
+        <ejs-richtexteditor formControlName="content" [toolbarSettings]="tools"></ejs-richtexteditor>
+
+        <div class="form-group">
+          <p>Upload Post Image</p>
+          <button (click)="filePicker.click()" class="btn btn-success">Choose File..</button>
+          <input (change)="onImageUpload($event)" class="default-uploader" type="file" #filePicker>
+        </div>
+
+        <div class="image-view" *ngIf="imageView !== '' && imageView">
+          <img class="img-fluid" [src]="imageView" [alt]="reactiveForm.value.title">
+        </div>
+
+        <button [disabled]="!reactiveForm.valid" type="submit" class="btn btn-primary">Add Post</button>
+      </form>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="row mt-4">-->
+  <!--<div class="col-10 m-auto">-->
+
+    <!--<form (ngSubmit)="onSubmitPost()" #formElement="ngForm">-->
+
+      <!--<div class="form-group">-->
+        <!--<label for="blogTitle">Enter Post Title</label>-->
+        <!--<input-->
+          <!--ngModel-->
+          <!--name="title"-->
+          <!--required-->
+          <!--#title="ngModel"-->
+          <!--type="text"-->
+          <!--class="form-control"-->
+          <!--id="blogTitle"-->
+          <!--aria-describedby="blogTitleHelp"-->
+          <!--placeholder="Enter Post Title..">-->
+        <!--<small *ngIf="title.touched && !title.valid" id="blogTitleHelp" class="form-text text-warning">This field can not be empty!</small>-->
+      <!--</div>-->
+
+      <!--<div class="form-group">-->
+        <!--<label for="blogImgUrl">Enter Post Image Url</label>-->
+        <!--<input-->
+          <!--ngModel-->
+          <!--name="imgUrl"-->
+          <!--required-->
+          <!--#blogImg="ngModel"-->
+          <!--type="text"-->
+          <!--class="form-control"-->
+          <!--id="blogImgUrl"-->
+          <!--aria-describedby="blogImgHelp"-->
+          <!--placeholder="Enter Post Image Url..">-->
+        <!--<small *ngIf="blogImg.touched && !blogImg.valid" id="blogImgHelp" class="form-text text-warning">This field can not be empty!</small>-->
+      <!--</div>-->
+
+      <!--<div class="form-group">-->
+        <!--<label for="blogContent">Enter Post Content</label>-->
+        <!--<textarea-->
+          <!--ngModel-->
+          <!--name="content"-->
+          <!--required-->
+          <!--#blogContent="ngModel"-->
+          <!--class="form-control"-->
+          <!--id="blogContent"-->
+          <!--rows="7">-->
+        <!--</textarea>-->
+        <!--<small *ngIf="blogContent.touched && !blogContent.valid" id="blogContentHelp" class="form-text text-muted">This field can not be empty!</small>-->
+      <!--</div>-->
+
+      <!--<button type="submit" [disabled]="!formElement.valid" class="btn btn-primary">Submit Post</button>-->
+
+    <!--</form>-->
+
+  <!--</div>-->
+<!--</div>-->
