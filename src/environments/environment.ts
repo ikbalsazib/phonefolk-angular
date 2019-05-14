@@ -3,9 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  herokuNodeServerUrl: 'https://phonefolk-rest-api.herokuapp.com'
+  production: true,
+  herokuNodeServerUrl: 'http://localhost:5000'
 };
+// http://63.141.253.134/
 
 /*
  * For easier debugging in development mode, you can import the following file

@@ -27,6 +27,7 @@ const routes: Routes = [
     ]},
   // for Auth Guard Login..
     {path: 'pf-admin/login', component: LoginComponent},
+  { path: 'register-new-user', component: RegistrationComponent },
   // Page Not Found..
   {path: '**', component: PageNotFoundComponent}
 ];
